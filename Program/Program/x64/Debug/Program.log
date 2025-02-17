@@ -1,17 +1,2 @@
 ﻿  Program.cpp
-C:\Users\admin\Desktop\SBS-Game-Academy4\Program\Program.cpp(118,32): error C2440: '초기화 중': 'T'에서 'SingleLinkedList<int>::Node *'(으)로 변환할 수 없습니다.
-C:\Users\admin\Desktop\SBS-Game-Academy4\Program\Program.cpp(118,32): error C2440:         with
-C:\Users\admin\Desktop\SBS-Game-Academy4\Program\Program.cpp(118,32): error C2440:         [
-C:\Users\admin\Desktop\SBS-Game-Academy4\Program\Program.cpp(118,32): error C2440:             T=int
-C:\Users\admin\Desktop\SBS-Game-Academy4\Program\Program.cpp(118,32): error C2440:         ]
-      C:\Users\admin\Desktop\SBS-Game-Academy4\Program\Program.cpp(118,32):
-      정수 계열 형식에서 포인터 형식으로 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 괄호가 있는 함수 스타일 캐스트가 필요합니다.
-      C:\Users\admin\Desktop\SBS-Game-Academy4\Program\Program.cpp(118,32):
-      템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
-          C:\Users\admin\Desktop\SBS-Game-Academy4\Program\Program.cpp(141,27):
-          컴파일되는 클래스 템플릿 인스턴스화 'SingleLinkedList<int>'에 대한 참조를 확인하세요.
-          C:\Users\admin\Desktop\SBS-Game-Academy4\Program\Program.cpp(108,10):
-          클래스 템플릿 멤버 함수 'void SingleLinkedList<int>::pop_back(void)'을(를) 컴파일하는 중입니다.
-              C:\Users\admin\Desktop\SBS-Game-Academy4\Program\Program.cpp(148,30):
-              'main'에서 'SingleLinkedList<int>::pop_back'에 대한 첫 번째 참조를 확인하세요.
-  
+  Program.vcxproj -> C:\Users\Administrator\Desktop\SBS-Game-Academy4\Program\x64\Debug\Program.exe
