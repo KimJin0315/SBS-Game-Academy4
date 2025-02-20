@@ -8,6 +8,9 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{C2D069C8-6F10-40D3-9FC1-B2C04E1B2BEC}|..\\Class1th (Single Linked List)\\Class1th (Single Linked List).vcxproj|C:\\Users\\Administrator\\Desktop\\SBS-Game-Academy4\\Class1th (Single Linked List)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0ACA34-6525-4D18-99F7-4F4D736924A6}|..\\Class2th (Double Linked List)\\Class2th (Double Linked List).vcxproj|C:\\Users\\Administrator\\Desktop\\SBS-Game-Academy4\\Class2th (Double Linked List)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,7 +30,7 @@
               "RelativeDocumentMoniker": "Program.cpp",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\SBS-Game-Academy4\\Program\\Program.cpp",
               "RelativeToolTip": "Program.cpp",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAqwIkAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAjwI0AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-13T09:06:06.801Z",
               "IsPinned": true,
@@ -41,9 +44,22 @@
               "RelativeDocumentMoniker": "..\\Class1th (Single Linked List)\\Source.cpp",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\SBS-Game-Academy4\\Class1th (Single Linked List)\\Source.cpp",
               "RelativeToolTip": "..\\Class1th (Single Linked List)\\Source.cpp",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAALEAAAAAAAAA",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAcwLEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-17T10:01:52.359Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\SBS-Game-Academy4\\Class2th (Double Linked List)\\Source.cpp",
+              "RelativeDocumentMoniker": "..\\Class2th (Double Linked List)\\Source.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\SBS-Game-Academy4\\Class2th (Double Linked List)\\Source.cpp",
+              "RelativeToolTip": "..\\Class2th (Double Linked List)\\Source.cpp",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwLYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-19T09:38:03.987Z",
               "IsPinned": true
             }
           ]

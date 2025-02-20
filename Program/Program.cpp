@@ -48,22 +48,113 @@ public:
         size++;
     }
 
+    void push_front(T data)
+    {
+        Node* newNode = new Node;
+
+        newNode->data = data;
+        
+        if (head == nullptr)
+        {
+            head = newNode;
+            newNode->next = head;
+        }
+        else
+        {
+            newNode->next = head->next;
+            head->next = newNode;
+            
+        }
+
+        size++;
+    }
+
+    const int& Size()
+    {
+        return size;
+    }
+
     void Show()
     {
-        Node* currentNode = head;
-
-        while (head->next != currentNode)
+  
+        if (head != nullptr)
         {
-            cout << currentNode->data << " ";
+            Node* currentNode = head->next;
 
-            currentNode = currentNode->next;
+            for (int i = 0; i < size; i++)
+            {
+                cout << currentNode->data << " ";
+
+                currentNode = currentNode->next;
+            }
         }
     }
 
+    void pop_front()
+    {
+
+        if (head == nullptr)
+        {
+            cout << "Linked List is Empty" << endl;
+        }
+        else
+        {
+            Node* deleteNode = head->next;
+
+            if (head == head->next)
+            {
+                head = nullptr;
+            }
+            else
+            {
+                head->next = deleteNode->next;          
+            }
+
+            delete deleteNode;
+
+            size--;
+        }
+    }
+
+    void pop_back()
+    {
+        if (head == nullptr)
+        {
+            cout << "Linked List is Empty" << endl;
+        }
+        else
+        {
+            Node* deleteNode = head;
+            Node* currentNode = head;
+
+            if(size == 1)
+            {
+                head = nullptr;
+            }
+            else
+            { 
+               
+                while (currentNode->next != head)
+                {
+                    currentNode = currentNode->next;
+                }
+
+                head = currentNode;
+                head->next = deleteNode->next;
+            }
+
+            delete deleteNode;
+
+            size--;
+        }
+    }
 
     ~CircleLinkedList()
     {
-
+        while (head != nullptr)
+        {
+            pop_front();
+        }
     }
 };
 
@@ -74,6 +165,13 @@ int main()
     circleLinkedList.push_back(10);
     circleLinkedList.push_back(20);
     circleLinkedList.push_back(30);
+
+    circleLinkedList.push_front(5);
+    circleLinkedList.push_front(1);
+
+    circleLinkedList.pop_back();
+
+    cout << "Linked List is Size : " << circleLinkedList.Size() << endl;
 
     circleLinkedList.Show();
 
