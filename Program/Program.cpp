@@ -1,23 +1,22 @@
 ﻿#include <iostream>
 
-#define SIZE 5
+#define SIZE 4
 
 using namespace std;
 
 template<typename T>
-class stack
+class CircleQueue
 {
 private:
-    int top;
-    int size;
+    int rear;
+    int front;
+
     T container[SIZE];
-
 public:
-
-    stack()
+    CircleQueue()
     {
-        top = -1;
-        size = 0;
+        rear = SIZE - 1;
+        front = SIZE - 1;
 
         for (int i = 0; i < SIZE; i++)
         {
@@ -25,73 +24,15 @@ public:
         }
     }
 
-    void push(T data)
-    {
-        if (top >= SIZE - 1)
-        {
-            cout << "Stack Overflow" << endl;
-        }
-        else
-        {
-           container[++top] = data;
-        }
-    }
 
-    bool Empty()
-    {
-        if (top <= -1)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 
-    void pop()
-    {
-        if (Empty())
-        {
-            cout << " Stack is Empty " << endl;
-        }
-        else
-        {
-            top--;
-        }
-    }
-
-    const int & Size()
-    {
-        size = top + 1;
-
-        return size;
-        
-    }
-
-    const T& Top()
-    {
-        return container[top];
-    }
 };
 
 int main()
 {
-    stack<int> stack;
+    CircleQueue<int> circleQueue;
 
-    stack.push(10);
-    stack.push(20);
-    stack.push(30);
-    stack.push(40);
-    stack.push(50);
 
-    while (stack.Empty() == false)
-    {
-        cout << stack.Top() << endl;
-
-        stack.pop();
-    }
- 
-
+   
     return 0;
 }
