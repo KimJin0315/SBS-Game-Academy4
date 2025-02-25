@@ -22,7 +22,7 @@ public:
 
     void resize(int newSize)
     {
-        int* newContainer = new int;
+        T* newContainer = new T[size];
         
         if (container == nullptr)
         {
