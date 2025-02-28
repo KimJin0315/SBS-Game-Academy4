@@ -53,6 +53,49 @@ public:
         return pointer[index];
     }
 
+    void Append(const char * word)
+    {
+        int resize = size;
+
+        size = size + strlen(word) + 1;
+
+        char * newPointer = new char[size];
+
+        for (int i = 0; i < resize; i++)
+        {
+            newPointer[i] = pointer[i];
+            
+        }
+
+        for (int i = 0; i < strlen(word) + 1; i++)
+        {
+            newPointer[resize + i] = word[i];
+        }
+
+        if (pointer != nullptr)
+        {
+            delete[] pointer;
+        }
+
+        pointer = newPointer;
+    }
+
+    long long Find (const char * word)
+    {
+        
+        for (int i = 0; i < size; i++)
+        {
+            if (pointer[i] != word[i])
+            {
+                cout << " " << endl;
+            }
+            else
+            {
+
+            }
+        }
+    }
+
     ~String()
     {
         if (pointer != nullptr)
@@ -66,9 +109,18 @@ public:
 int main()
 {
     String string;
-
-    string = "key";
-
+    
+    string = "hello";
+    
+    for (int i = 0; i < string.Size(); i++)
+    {
+        cout << string[i];
+    }
+    
+    cout << endl;
+    
+    string.Append(" world");
+    
     for (int i = 0; i < string.Size(); i++)
     {
         cout << string[i];
@@ -76,7 +128,7 @@ int main()
 
     cout << endl;
 
-    string = "apple";
+    string.Append(" !!");
 
     for (int i = 0; i < string.Size(); i++)
     {
