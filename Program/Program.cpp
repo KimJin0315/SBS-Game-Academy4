@@ -80,28 +80,46 @@ public:
         pointer = newPointer;
     }
 
-    long long Find (const char * word)
+    long long Find(const char* word)
     {
-        
-        for (int i = 0; i < size; i++)
-        {
-            if (pointer[i] != word[i])
-            {
-                cout << " " << endl;
-            }
-            else
-            {
+        int wordLen = 0;
 
+        while (word[wordLen] != NULL)
+        {
+            wordLen++;
+        }
+
+        if (wordLen == 0 || wordLen > size - 1)
+        {
+            return -1;
+        }
+        else
+        {
+            for (int i = 0; i <= size - wordLen; i++)
+            {
+                for (int j = 0; j < wordLen; j++)
+                {
+                    if (pointer[i + j] != word[j])
+                    {
+                        break;
+                    }
+
+                    else if (j = wordLen - 1)
+                    {
+                        return i;
+                    }
+                }
             }
+
         }
     }
 
     ~String()
     {
-        if (pointer != nullptr)
-        {
-            delete[] pointer;
-        }
+      if (pointer != nullptr)
+      {
+          delete[] pointer;
+      }
     }
 
 };
@@ -133,6 +151,18 @@ int main()
     for (int i = 0; i < string.Size(); i++)
     {
         cout << string[i];
+    }
+
+    cout << endl;
+
+    long long findIndex = string.Find("fo");
+    if (findIndex == -1)
+    {
+        cout << "해당 문자열을 찾을 수 없습니다." << endl;
+    }
+    else
+    {
+        cout << "문자열을 찾았습니다. 위치 : " << findIndex << endl;
     }
 
     return 0;
