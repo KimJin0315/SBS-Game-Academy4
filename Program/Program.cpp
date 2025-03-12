@@ -1,127 +1,87 @@
 ﻿#include <iostream>
 
-#define SIZE 8
+#define SIZE 10
 
 using namespace std;
 
-template <typename T>
-class PriorityQueue
+template<typename T>
+class AdjacencyList
 {
 private:
-    int index;
-    T container[SIZE];
-public:
-    PriorityQueue()
+    struct Node
     {
-        index = 0;
+        T data;
+        Node* next;
+
+        Node(T data, Node* link = nullptr)
+        {
+            this->data = data;
+            next = link;
+        }
+    };
+
+    int size; // 정점의 개수
+    T vertex[SIZE]; // 정점의 집합
+    Node* list[SIZE]; // 인접 리스트
+
+public:
+
+    AdjacencyList()
+    {
+        size = 0;
 
         for (int i = 0; i < SIZE; i++)
         {
-            container[i] = NULL;
+            list[i] = NULL;
+            vertex[i] = NULL;
         }
     }
 
     void push(T data)
     {
-        if (index + 1 >= SIZE)
+        if (size >= SIZE)
         {
-            cout << "Priority Queue Overflow" << endl;
+            cout << "Adjacency List is Overflow" << endl;
         }
         else
         {
-            container[++index] = data;
+            vertex[size++] = data;
+        }
+    }
 
-            int child = index;
-            int parent = child / 2;
+    void edge(int i, int j)
+    {
+        if (size <= 0)
+        {
+            cout << "Adjacency List is Empty" << endl;
+        }
+        else if (i > = size || j >= size)
+        {
+            cout << "Index out of Range" << endl;
+        }
+        else
+        {
+            list[i] = new Node(vertex[j], list[i]);
+            list[j] = new Node(vertex[i], list[j]);
+        }
 
-            while (child > 1)
+    }
+
+    ~AdjacencyList()
+    {
+        for (int i = 0; i < SIZE; i++)
+        {
+            if (list[i] != nullptr)
             {
-                if (container[parent] < container[child])
-                {
-                    std::swap(container[parent], container[child]);
-                }
-
-                child = parent;
-                parent = child / 2;
-            }
-
-        }
-    }
-
-    const T & top ()
-    {
-        return container[1];
-    }
-
-    const bool & empty()
-    {
-        if (index <= 0 )
-        {
-            return true;
-
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    void pop()
-    {
-        if (index <= 0)
-        {
-            cout << "Priority QUeue is Empty" << endl;
-        }
-        else
-        {
-            container[1] = container[index];
-            
-            container[index--] = NULL;
-
-            int parent = 1;
-
-            while (parent * 2 <= index)
-            {
-                int child = parent * 2;
-
-                if (container[child] < container[child + 1])
-                {
-                    child++;
-                }
-
-                if (container[child] < container[parent])
-                {
-                    break;
-                }
-                else
-                {
-                    std::swap(container[parent], container[child]);
-
-                    parent = child;
-                }
+                delete[] list[i];
             }
         }
     }
-
 };
 
 int main()
 {
-    PriorityQueue <int> priorityQueue;
-
-    priorityQueue.push(10);
-    priorityQueue.push(5);
-    priorityQueue.push(19);
-    priorityQueue.push(15);
-    priorityQueue.push(7);
-    priorityQueue.push(8);
-
-    while (priorityQueue.empty() == false)
-    {
-        cout << priorityQueue.top() << endl;
-
-        priorityQueue.pop();
-    }
+    AdjacencyList<int>adjacencyList;
 
 
     return 0;
